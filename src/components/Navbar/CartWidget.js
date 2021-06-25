@@ -1,17 +1,24 @@
-import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import React from "react";
 
-import './CartWidget.css';
+import { makeStyles } from "@material-ui/core/styles";
+import IconButton from "@material-ui/core/IconButton";
+import AddShoppingCartIcon from "@material-ui/icons/AddShoppingCart";
 
-const cart = <FontAwesomeIcon icon={faShoppingCart} />
+const useStyles = makeStyles((theme) => ({
+  root: {
+    "& > *": {
+      margin: theme.spacing(1),
+    },
+  },
+}));
 
-function CartWidget() {
-    return (
-        <div>
-            <i>{cart}</i>
-        </div>
-    )
+export default function IconButtons() {
+  const classes = useStyles();
+  return (
+    <div className={classes.root}>
+      <IconButton color="black" aria-label="add to shopping cart">
+        <AddShoppingCartIcon />
+      </IconButton>
+    </div>
+  );
 }
-
-export default CartWidget;

@@ -7,7 +7,7 @@ import CartWidget from "./CartWidget";
 function Navbar() {
   return (
     <div className="header-container">
-      <div>
+      <div className="icon-items">
         <CartWidget />
       </div>
       <nav className="nav-container">

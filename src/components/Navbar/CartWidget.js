@@ -1,24 +1,25 @@
 import React from "react";
 
-import { makeStyles } from "@material-ui/core/styles";
+import Badge from "@material-ui/core/Badge";
+import { withStyles } from "@material-ui/core/styles";
 import IconButton from "@material-ui/core/IconButton";
-import AddShoppingCartIcon from "@material-ui/icons/AddShoppingCart";
+import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    "& > *": {
-      margin: theme.spacing(1),
-    },
+const StyledBadge = withStyles((theme) => ({
+  badge: {
+    right: -3,
+    top: 13,
+    border: `2px solid ${theme.palette.background.paper}`,
+    padding: "0 4px",
   },
-}));
+}))(Badge);
 
-export default function IconButtons() {
-  const classes = useStyles();
-  return (
-    <div className={classes.root}>
-      <IconButton color="black" aria-label="add to shopping cart">
-        <AddShoppingCartIcon />
+export default function CustomizedBadges() {
+    return (
+      <IconButton aria-label="cart">
+        <StyledBadge badgeContent={1} color="#F2E205">
+          <ShoppingCartIcon />
+        </StyledBadge>
       </IconButton>
-    </div>
-  );
-}
+    );
+  }

@@ -1,1 +1,8 @@
+*{
+    padding: 0;
+}
 
+.cont-button {
+    display: flex;
+    justify-content: center;
+}
